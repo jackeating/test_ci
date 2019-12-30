@@ -7,4 +7,6 @@ jobs:
     steps:
       - checkout
       - run:
-          python test_calculations.py
+          pytest test_calculations.py --junit-xml=test-results/pytest.xml
+      - store_test_results:
+          path: test-results
